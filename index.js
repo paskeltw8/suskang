@@ -1,9 +1,7 @@
-const sokang = "51380899114765516";//8;
+const sokang = "513808991147655168";
 const Discord = require("discord.js");
 const dotenv = require("dotenv");
 dotenv.config();
-console.log(dotenv);
-console.log(process.env.SECRET);
 
 const client = new Discord.Client();
 
