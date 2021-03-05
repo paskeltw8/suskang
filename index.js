@@ -10,15 +10,17 @@ client.once("ready", () => console.log("sus"));
 
 client.on("message", async (msg) => {
     try {
+        buildErrorsAndSend(msg.channel);
         if (msg.author.id == sokang) {
             try {
+                sendLRandomly(msg.channel);
                 const suskang = msg.guild
                     .emojis
                     .cache
                     .find(emoji => emoji.name === "suskang");
                 await msg.react(suskang);
             } catch {
-                msg.channel.send("something went wrong 😔\nmaybe :suskan: doesnt exist");
+                msg.channel.send("something went wrong 😔\nmaybe :suskang: doesnt exist");
             }
         }
     } catch {
@@ -29,6 +31,8 @@ client.on("message", async (msg) => {
 
 client.login(process.env.SECRET);
 
+
+
 function buildErrorsAndSend(channel) {
     if (flag) {
         channel.send("YOU ABSOLUTE RETARD HOW DARE MUTE ME!!!!!!!!!!!!!!!!!");
@@ -36,4 +40,11 @@ function buildErrorsAndSend(channel) {
         return;
     }
     return;
+}
+
+function sendLRandomly(channel){
+    let now = Date.now();
+    if(now%643 == 0){
+        channel.send("LLLLLLLLLLLLLLLLLLL");
+    }
 }
