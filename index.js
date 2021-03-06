@@ -29,7 +29,7 @@ client.on("message", async (msg) => {
     }
 });
 
-client.login("ODE1MTg2NTAxNjMyNzg2NDQ5.YDovlw.jt1XWMVGKxDfN2iPJwDPnGiktjE");
+client.login(process.env.SECRET);
 
 
 
