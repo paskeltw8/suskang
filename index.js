@@ -29,7 +29,7 @@ client.on("message", async (msg) => {
     }
 });
 
-client.login(process.env.SECRET);
+client.login("ODE1MTg2NTAxNjMyNzg2NDQ5.YDovlw.jt1XWMVGKxDfN2iPJwDPnGiktjE");
 
 
 
@@ -44,7 +44,7 @@ function buildErrorsAndSend(channel) {
 
 function sendLRandomly(channel){
     let now = Date.now();
-    if(now%643 == 0){
+    if(now%100 == 0){
         channel.send("LLLLLLLLLLLLLLLLLLL");
     }
 }
