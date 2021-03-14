@@ -25,7 +25,7 @@ client.on("message", async (msg) => {
         }
     } catch {
         if (!flag)
-            flag != fag;
+            flag != flag;
     }
 });
 
