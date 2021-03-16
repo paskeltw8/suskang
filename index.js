@@ -1,15 +1,14 @@
 const sokang = "513808991147655168";
-import { Client } from "discord.js";
-import { config } from "dotenv";
+const discord = require("discord.js");
 var flag = 0;
 var self;
-config();
 
-const client = new Client();
+const client = new discord.Client();
 
 client.once("ready", () => console.log("sus"));
 
 client.on("message", async (msg) => {
+    ping(msg.channel, ["513808991147655168"]); //add more members
     self = msg.guild.member(client.user);
     try {
         buildErrorsAndSend(msg.channel);
@@ -33,8 +32,6 @@ client.on("message", async (msg) => {
 
 client.login(process.env.SECRET);
 
-
-
 function buildErrorsAndSend(channel) {
     if (flag) {
         channel.send("YOU ABSOLUTE RETARD HOW DARE MUTE ME!!!!!!!!!!!!!!!!!");
@@ -44,9 +41,20 @@ function buildErrorsAndSend(channel) {
     return;
 }
 
-function sendLRandomly(channel){
+function sendLRandomly(channel) {
     let now = Date.now();
-    if(now%100 == 0){
+    if (now % 100 == 0) {
         channel.send("LLLLLLLLLLLLLLLLLLL");
+    }
+}
+
+//pings one of the targets randomly if message not sent by author
+function ping(channel, targets, author = "815186501632786449") {
+    let now = Date.now();
+    if (now % 77 == 0) {
+        if (author == "815186501632786449")
+            return;
+        let cur = targets[Math.floor(Math.random() * targets.length)];
+        channel.send(`<@${cur}> hah get pinged`);
     }
 }
