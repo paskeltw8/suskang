@@ -30,8 +30,17 @@ client.on("message", async (msg) => {
     }
 });
 
+client.on('messageUpdate', async (msg) => {
+    await msg.channel.send(`lol <@${msg.author.id}> is a retard who cant even spell`);
+});
+
+
+// client.login(process.env.SECRET);
 client.login(process.env.SECRET);
 
+
+
+// ================================================================================
 function buildErrorsAndSend(channel) {
     if (flag) {
         channel.send("YOU ABSOLUTE RETARD HOW DARE MUTE ME!!!!!!!!!!!!!!!!!");
