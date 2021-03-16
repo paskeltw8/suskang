@@ -1,14 +1,16 @@
 const sokang = "513808991147655168";
-const Discord = require("discord.js");
-const dotenv = require("dotenv");
+import { Client } from "discord.js";
+import { config } from "dotenv";
 var flag = 0;
-dotenv.config();
+var self;
+config();
 
-const client = new Discord.Client();
+const client = new Client();
 
 client.once("ready", () => console.log("sus"));
 
 client.on("message", async (msg) => {
+    self = msg.guild.member(client.user);
     try {
         buildErrorsAndSend(msg.channel);
         if (msg.author.id == sokang) {
