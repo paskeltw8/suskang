@@ -31,6 +31,7 @@ client.on("message", async (msg) => {
 });
 
 client.on('messageUpdate', async (msg) => {
+    if (msg.author.bot) return;
     await msg.channel.send(`lol <@${msg.author.id}> is a retard who cant even spell`);
 });
 
