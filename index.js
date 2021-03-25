@@ -5,6 +5,7 @@ var flag = 0;
 var self;
 const guildId = "689964611004399673" //orion server
 const client = new discord.Client();
+const URLRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
 client.once("ready", async () => {
     console.log("sus")
@@ -36,6 +37,7 @@ client.on("message", async (msg) => {
 
 client.on('messageUpdate', async (msg) => {
     if (msg.author.bot) return;
+    if (URLRegex.test(msg.content)) return;
     await msg.channel.send(`lol <@${msg.author.id}> is a retard who cant even spell`);
 });
 client.login(process.env.SECRET);
