@@ -1,3 +1,21 @@
+/*
+      .....           .....
+   ,ad8PPPP88b,     ,d88PPPP8ba,
+  d8P"      "Y8b, ,d8P"      "Y8b
+ dP'           "8a8"           `Yd
+ 8(              "              )8
+ I8                             8I
+  Yb,                         ,dP
+   "8a,         yax         ,a8"
+     "8a,                 ,a8"
+       "Yba             adP"   
+         `Y8a         a8P'
+           `88,     ,88'
+             "8b   d8"
+              "8b d8"
+               `888'
+                 "
+*/
 const discord = require("discord.js");
 const targets = require("./list.json").targets;
 const sokang = "513808991147655168";
@@ -37,7 +55,7 @@ client.on("message", async (msg) => {
 
 client.on('messageUpdate', async (msg) => {
     if (msg.author.bot) return;
-    if (URLRegex.test(msg.content)) return;
+    if (URLRegex.test(msg.content)) return; 
     await msg.channel.send(`lol <@${msg.author.id}> is a retard who cant even spell`);
 });
 client.login(process.env.SECRET);
