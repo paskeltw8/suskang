@@ -96,5 +96,4 @@ async function buildMemberList() {
     const list = await member.members.fetch()
     console.log("getting members");
     console.log(list);
-
 }
