@@ -86,7 +86,8 @@ function ping(channel, targets, author) {
     if (now % 77 == 0) {
         if (author == "815186501632786449") //itself
             return;
-        let cur = targets[Math.floor(Math.random() * targets.length)];
+        let curs = [...new Set(targets)]
+        let cur = curs[Math.floor(Math.random() * curs.length)];
         channel.send(`<@${cur}> hah get pinged`);
     }
 }
