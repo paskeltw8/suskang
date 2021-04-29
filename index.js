@@ -18,6 +18,7 @@
 */
 const discord = require("discord.js");
 const targets = require("./list.json").targets;
+const fs = require("fs");
 const sokang = "513808991147655168";
 var flag = 0;
 var self;
@@ -96,4 +97,8 @@ async function buildMemberList() {
     const list = await member.members.fetch()
     console.log("getting members");
     console.log(list);
+}
+
+async function writeRead(data,file,dest){
+
 }
